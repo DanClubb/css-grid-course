@@ -1,25 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../assets/style.css" />
+        <title>CSS grid-auto-flow Explained!</title>
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/style.css">
-  <title>CSS grid-auto-flow Explained!</title>
-</head>
+    <body>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
 
-<body>
-  <div class="container">
-    <div class="item">1</div>
-    <div class="item">2</div>
-  </div>
+        <style>
+            .container {
+                display: grid;
+                grid-gap: 20px;
+                grid-template-columns: 400px 200px;
+                /* 
+                Grid auto flow allows you to determine whether 
+                implicitly created grid items will be displayed as extra rows or columns 
+                Dfault behavour is rows
+                */
+                grid-auto-flow: column;
+                /* 
+                Grid auto columns/rows allow you to define the width of the implicit columns
+                or
+                the height of the implicit rows
 
-  <style>
-    .container {
-      display: grid;
-      grid-gap: 20px;
-    }
-  </style>
-</body>
-
+                Seems to also effect explicit items when using the opposite of the flow
+                e.g. setting a value for gird auto rows when the grid auto flow is columns
+                 */
+                grid-auto-columns: 100px;
+            }
+        </style>
+    </body>
 </html>
